@@ -1,0 +1,30 @@
+package JDBC;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+public class fat_data {
+
+	public static void main(String[] args) throws SQLException {
+		
+		String un="root";
+		String pwd="root";
+		String url="jdbc:mysql://localhost:3306/test";
+		
+		Connection con = DriverManager.getConnection(url, un, pwd);
+		Statement stat = con.createStatement();
+		ResultSet result = stat.executeQuery("select * from data");
+		
+		while (result.next())
+		{
+			String un1=result.getString(1);
+			String pwd1=result.getString(2);
+			System.out.println(un1+"   "+pwd1);
+		}
+
+	}
+
+}
