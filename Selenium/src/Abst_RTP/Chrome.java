@@ -30,7 +30,7 @@ public class Chrome {
 		System.out.println(P_src);
 		String c_url = driver.getCurrentUrl();
 		System.out.println(c_url);
-		
+		//clone uRi copied
 }
 	
 	
